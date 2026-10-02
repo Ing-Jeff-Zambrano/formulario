@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripción a Cursos</title>
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  </svg>
+
+  <main class="tarjeta-form">
+    <header class="cabecera">
+      <span class="insignia">Inscripciones abiertas 2026</span>
+      <div class="logo"><svg class="icono"><use href="#i-cap"/></svg></div>
+      <h1>Inscripción a Cursos</h1>
+      <p class="subtitulo">Elige tu curso y completa tus datos para reservar tu cupo prioritario.</p>
+    </header>
+
+    <!-- novalidate: las validaciones las controla script.js -->
+    <form id="formulario" novalidate>
+
+      <section class="seccion">
+        <h2>1. Datos personales</h2>
+
+        <div class="campo">
+          <label for="nombre">Nombre completo <span class="req">*</span></label>
+          <div class="input-grupo">
+            <svg class="icono"><use href="#i-user"/></svg>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" minlength="3" required>
+          </div>
+          <span class="error" id="error-nombre"></span>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico <span class="req">*</span></label>
+          <div class="input-grupo">
+            <svg class="icono"><use href="#i-mail"/></svg>
+            <input type="email" id="correo" name="correo" placeholder="usuario@correo.com" required>
+          </div>
+          <span class="error" id="error-correo"></span>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="telefono">Teléfono <span class="req">*</span></label>
+            <div class="input-grupo">
+              <svg class="icono"><use href="#i-phone"/></svg>
+              <input type="tel" id="telefono" name="telefono" placeholder="0991234567" maxlength="10" required>
+            </div>
+            <span class="error" id="error-telefono"></span>
+          </div>
+
+          <div class="campo">
+            <label for="edad">Edad <span class="req">*</span></label>
+            <input type="number" id="edad" name="edad" placeholder="18" min="16" max="99" required>
+            <span class="error" id="error-edad"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <h2>2. Detalles del curso</h2>
+
+        <div class="campo">
+          <label for="curso">Curso disponible <span class="req">*</span></label>
+          <select id="curso" name="curso" required>
+            <option value="">Selecciona un curso</option>
+            <option value="HTML y CSS desde cero">HTML y CSS desde cero</option>
+            <option value="JavaScript Básico">JavaScript Básico</option>
+            <option value="Programación en Python">Programación en Python</option>
+            <option value="Bases de Datos con SQL">Bases de Datos con SQL</option>
+            <option value="Git y GitHub">Git y GitHub</option>
+            <option value="Fundamentos de Redes">Fundamentos de Redes</option>
+          </select>
+          <span class="error" id="error-curso"></span>
+        </div>
+
+        <fieldset class="campo">
+          <legend>Modalidad de estudio <span class="req">*</span></legend>
+          <div class="modalidades">
+            <label class="opcion">
+              <input type="radio" name="modalidad" value="Presencial">
+              <span class="modalidad-tarjeta"><strong>Presencial</strong><small>En campus</small></span>
+            </label>
+            <label class="opcion">
+              <input type="radio" name="modalidad" value="Virtual">
+              <span class="modalidad-tarjeta"><strong>Virtual</strong><small>En vivo por Zoom</small></span>
+            </label>
+          </div>
+          <span class="error" id="error-modalidad"></span>
+        </fieldset>
+      </section>
+
+      <section class="seccion">
+        <h2>3. Seguridad de la cuenta</h2>
+
+        <div class="campo">
+          <label for="password">Contraseña <span class="req">*</span></label>
+          <div class="input-grupo">
+            <input type="password" id="password" name="password" class="con-ojo" placeholder="Mínimo 8 caracteres" minlength="8" required>
+            <button type="button" class="ojo" data-objetivo="password" aria-label="Mostrar u ocultar contraseña">
+              <svg class="icono"><use href="#i-eye"/></svg>
+            </button>
+          </div>
+          <span class="error" id="error-password"></span>
+        </div>
+
+        <div class="campo">
+          <label for="confirmar">Confirmar contraseña <span class="req">*</span></label>
+          <div class="input-grupo">
+            <input type="password" id="confirmar" name="confirmar" class="con-ojo" placeholder="Repite tu contraseña" required>
+            <button type="button" class="ojo" data-objetivo="confirmar" aria-label="Mostrar u ocultar contraseña">
+              <svg class="icono"><use href="#i-eye"/></svg>
+            </button>
+          </div>
+          <span class="error" id="error-confirmar"></span>
+        </div>
+      </section>
+
+      <div class="campo">
+        <label class="terminos">
+          <input type="checkbox" id="terminos" name="terminos">
+          <span>Acepto los <a href="#">términos de servicio</a> y las <a href="#">políticas de privacidad</a>.</span>
+        </label>
+        <span class="error" id="error-terminos"></span>
+      </div>
+
+      <button type="submit" class="btn-enviar">
+        Inscribirme ahora
+        <svg class="icono"><use href="#i-arrow"/></svg>
+      </button>
+      <p class="mensaje-exito" id="mensaje-exito"></p>
+
+      <p class="nota-seguridad">
+        <svg class="icono"><use href="#i-shield"/></svg>
+        Tus datos se procesan únicamente en tu navegador.
+      </p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
