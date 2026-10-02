@@ -1,11 +1,8 @@
-{
-
-
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 
 :root {
   --principal: #4338ca;
@@ -18,7 +15,6 @@
   --texto-suave: #64748b;
 }
 
-
 body {
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 45%);
@@ -29,13 +25,11 @@ body {
   padding: 2rem 1rem;
 }
 
-
 .sprite {
   position: absolute;
   width: 0;
   height: 0;
 }
-
 
 .icono {
   width: 1rem;
@@ -48,7 +42,6 @@ body {
   flex-shrink: 0;
 }
 
-
 .tarjeta-form {
   background: #fff;
   width: 100%;
@@ -59,12 +52,10 @@ body {
   box-shadow: 0 10px 40px rgba(67, 56, 202, 0.1);
 }
 
-
 .cabecera {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
 
 .insignia {
   display: inline-block;
@@ -76,7 +67,6 @@ body {
   border-radius: 999px;
   margin-bottom: 1rem;
 }
-
 
 .logo {
   width: 48px;
@@ -90,17 +80,14 @@ body {
   justify-content: center;
 }
 
-
 .logo .icono {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-
 h1 {
   font-size: 1.35rem;
 }
-
 
 .subtitulo {
   color: var(--texto-suave);
@@ -108,14 +95,12 @@ h1 {
   margin-top: 0.4rem;
 }
 
-
 .seccion {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
   margin-bottom: 1.5rem;
 }
-
 
 h2 {
   font-size: 0.7rem;
@@ -126,7 +111,6 @@ h2 {
   border-bottom: 1px solid var(--borde);
 }
 
-
 .campo {
   display: flex;
   flex-direction: column;
@@ -135,13 +119,11 @@ h2 {
   min-width: 0;
 }
 
-
 .fila {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 0.9rem;
 }
-
 
 label,
 legend {
@@ -149,16 +131,13 @@ legend {
   font-weight: 600;
 }
 
-
 .req {
   color: var(--error);
 }
 
-
 .input-grupo {
   position: relative;
 }
-
 
 .input-grupo > .icono {
   position: absolute;
@@ -168,7 +147,6 @@ legend {
   color: #94a3b8;
   pointer-events: none;
 }
-
 
 input[type="text"],
 input[type="email"],
@@ -187,16 +165,13 @@ select {
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
-
 .input-grupo input:not(.con-ojo) {
   padding-left: 2.4rem;
 }
 
-
 .con-ojo {
   padding-right: 2.6rem;
 }
-
 
 input:focus,
 select:focus {
@@ -205,7 +180,6 @@ select:focus {
   border-color: var(--principal);
   box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.15);
 }
-
 
 .ojo {
   position: absolute;
@@ -220,11 +194,9 @@ select:focus {
   display: flex;
 }
 
-
 .ojo:hover {
   color: var(--principal);
 }
-
 
 .modalidades {
   display: grid;
@@ -232,18 +204,15 @@ select:focus {
   gap: 0.75rem;
 }
 
-
 .opcion {
   position: relative;
   cursor: pointer;
 }
 
-
 .opcion input {
   position: absolute;
   opacity: 0;
 }
-
 
 .modalidad-tarjeta {
   display: flex;
@@ -256,22 +225,18 @@ select:focus {
   transition: border-color 0.2s, background 0.2s;
 }
 
-
 .modalidad-tarjeta strong {
   font-size: 0.85rem;
 }
-
 
 .modalidad-tarjeta small {
   font-size: 0.7rem;
   color: var(--texto-suave);
 }
 
-
 .opcion:hover .modalidad-tarjeta {
   border-color: #a5b4fc;
 }
-
 
 .opcion input:checked + .modalidad-tarjeta {
   border-color: var(--principal);
@@ -279,11 +244,9 @@ select:focus {
   color: var(--principal);
 }
 
-
 .opcion input:focus-visible + .modalidad-tarjeta {
   box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.25);
 }
-
 
 .terminos {
   display: flex;
@@ -295,42 +258,36 @@ select:focus {
   cursor: pointer;
 }
 
-
 .terminos input {
   margin-top: 0.15rem;
   accent-color: var(--principal);
 }
-
 
 .terminos a {
   color: var(--principal);
   text-decoration: none;
 }
 
-
 .terminos a:hover {
   text-decoration: underline;
 }
 
-
 /* Clases que aplica script.js según el estado de validación */
+
 .invalido {
   border-color: var(--error);
   background: #fef2f2;
 }
 
-
 .valido {
   border-color: var(--exito);
 }
-
 
 .error {
   color: var(--error);
   font-size: 0.72rem;
   min-height: 0.9rem;
 }
-
 
 .btn-enviar {
   width: 100%;
@@ -351,16 +308,13 @@ select:focus {
   transition: background 0.2s, transform 0.1s;
 }
 
-
 .btn-enviar:hover {
   background: var(--principal-oscuro);
 }
 
-
 .btn-enviar:active {
   transform: scale(0.99);
 }
-
 
 .mensaje-exito {
   margin-top: 0.75rem;
@@ -370,11 +324,9 @@ select:focus {
   color: var(--exito);
 }
 
-
 .mensaje-exito.mensaje-error {
   color: var(--error);
 }
-
 
 .nota-seguridad {
   margin-top: 0.9rem;
@@ -386,19 +338,16 @@ select:focus {
   color: var(--texto-suave);
 }
 
-
 .nota-seguridad .icono {
   color: var(--exito);
   width: 0.85rem;
   height: 0.85rem;
 }
 
-
 @media (max-width: 400px) {
   .tarjeta-form {
     padding: 1.5rem 1.1rem;
   }
-
 
   .fila {
     grid-template-columns: 1fr;
