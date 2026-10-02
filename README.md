@@ -18,3 +18,4 @@ Mensajes de error por campo y mensaje de éxito o de corrección al enviar.
 El formulario no se envía mientras existan datos inválidos.
 
 ## Cómo verlo
+Abre index.html en el navegador, o sirve la carpeta con un servidor local.
